@@ -3,67 +3,169 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Meu Mini Site</title>
+  <title>Meus Produtos</title>
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       font-family: Arial, sans-serif;
-      margin: 0;
-      background: #f9f9f9;
-      color: #333;
-      text-align: center;
-      padding: 40px 20px;
+      background: #f0f0f0;
+      padding-top: 100px;
     }
 
-    .container {
-      max-width: 600px;
-      margin: auto;
-      background: #fff;
-      border-radius: 20px;
-      padding: 30px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    header {
+      background: #000000;
+      color: white;
+      padding: 15px 20px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
     }
 
-    img {
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .search-box {
+      margin-top: 10px;
+    }
+
+    input[type="text"] {
+      padding: 8px 12px;
+      border: none;
+      border-radius: 6px;
       width: 200px;
+    }
+
+    .produtos-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .produto {
+      background: white;
+      border-radius: 12px;
+      padding: 15px;
+      width: 280px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.2s;
+    }
+
+    .produto:hover {
+      transform: translateY(-5px);
+    }
+
+    .produto img {
+      max-width: 100%;
+      border-radius: 8px;
       height: 200px;
       object-fit: cover;
-      border-radius: 50%;
-      margin-bottom: 20px;
     }
 
-    h1 {
-      font-size: 28px;
-      margin-bottom: 10px;
+    .produto h3 {
+      margin: 15px 0 10px;
     }
 
-    p {
-      font-size: 16px;
-      line-height: 1.5;
-      margin-bottom: 30px;
+    .produto p {
+      font-size: 14px;
+      color: #555;
     }
 
-    a.button {
-      display: inline-block;
-      padding: 12px 25px;
-      background-color: #4CAF50;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 8px;
-      transition: background 0.3s;
-    }
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
 
-    a.button:hover {
-      background-color: #45a049;
+      .search-box {
+        margin-top: 10px;
+        width: 100%;
+      }
+
+      input[type="text"] {
+        width: 100%;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <img src="minha-foto.jpg" alt="Minha Foto">
-    <h1>Bem-vindo ao meu site!</h1>
-    <p>Esse é meu espaço onde compartilho um pouco sobre mim e meus produtos. Clique no botão abaixo para conferir minha lojinha! 🚀</p>
-    <a href="produtos.html" class="button">Ver Produtos</a>
+  <header>
+    <div class="logo">Minha Loja</div>
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Buscar produto...">
+    </div>
+  </header>
+
+  <div class="produtos-container" id="produtosContainer">
+    <div class="produto">
+      <img src="produto1.jpg" alt="Produto 1">
+      <h3>Caneca Criativa</h3>
+      <p>Caneca com estampa personalizada.</p>
+    </div>
+
+    <div class="produto">
+      <img src="produto2.jpg" alt="Produto 2">
+      <h3>Quadro Decorativo</h3>
+      <p>Quadro para sala ou escritório.</p>
+    </div>
+
+    <div class="produto">
+      <img src="produto3.jpg" alt="Produto 3">
+      <h3>Camiseta Estilosa</h3>
+      <p>Conforto e estilo em uma só peça.</p>
+    </div>
+
+    <div class="produto">
+      <img src="produto4.jpg" alt="Produto 4">
+      <h3>Chaveiro de Couro</h3>
+      <p>Feito à mão com material de qualidade.</p>
+    </div>
+
+    <div class="produto">
+      <img src="produto5.jpg" alt="Produto 5">
+      <h3>Adesivo para Moto</h3>
+      <p>Estilo para sua XRE ou GS650!</p>
+    </div>
+
+    <div class="produto">
+      <img src="produto6.jpg" alt="Produto 6">
+      <h3>Bolsa Compacta</h3>
+      <p>Ideal para o dia a dia e viagens.</p>
+    </div>
   </div>
+
+  <script>
+    const searchInput = document.getElementById('searchInput');
+    const produtos = document.querySelectorAll('.produto');
+
+    searchInput.addEventListener('input', function () {
+      const filtro = searchInput.value.toLowerCase(); 
+
+      produtos.forEach(produto => { 
+        const nome = produto.querySelector('h3').textContent.toLowerCase();
+        if (nome.includes(filtro)) {
+          produto.style.display = 'block';
+        } else {
+          produto.style.display = 'none';
+        }
+      });
+    });
+  </script>
 </body>
 </html>
