@@ -87,6 +87,22 @@
       color: #555;
     }
 
+    .botao {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 15px;
+      background-color: #000;
+      color: #fff;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 14px;
+      transition: background 0.2s;
+    }
+
+    .botao:hover {
+      background-color: #333;
+    }
+
     @media (max-width: 600px) {
       header {
         flex-direction: column;
@@ -117,36 +133,42 @@
       <img src="teste.png" alt="Produto 1">
       <h3>Caneca Criativa</h3>
       <p>Caneca com estampa personalizada.</p>
+      <a class="botao" href="https://seusite.com/produto1" target="_blank">Ver Produto</a>
     </div>
 
     <div class="produto">
       <img src="teste.png" alt="Produto 2">
       <h3>Quadro Decorativo</h3>
       <p>Quadro para sala ou escritório.</p>
+      <a class="botao" href="https://seusite.com/produto2" target="_blank">Ver Produto</a>
     </div>
 
     <div class="produto">
       <img src="teste.png" alt="Produto 3">
       <h3>Camiseta Estilosa</h3>
       <p>Conforto e estilo em uma só peça.</p>
+      <a class="botao" href="https://seusite.com/produto3" target="_blank">Ver Produto</a>
     </div>
 
     <div class="produto">
       <img src="teste.png" alt="Produto 4">
       <h3>Chaveiro de Couro</h3>
       <p>Feito à mão com material de qualidade.</p>
+      <a class="botao" href="https://seusite.com/produto4" target="_blank">Ver Produto</a>
     </div>
 
     <div class="produto">
       <img src="teste.png" alt="Produto 5">
       <h3>Adesivo para Moto</h3>
       <p>Estilo para sua XRE ou GS650!</p>
+      <a class="botao" href="https://seusite.com/produto5" target="_blank">Ver Produto</a>
     </div>
 
     <div class="produto">
       <img src="teste.png" alt="Produto 6">
       <h3>Bolsa Compacta</h3>
       <p>Ideal para o dia a dia e viagens.</p>
+      <a class="botao" href="https://seusite.com/produto6" target="_blank">Ver Produto</a>
     </div>
   </div>
 
@@ -154,7 +176,7 @@
     const searchInput = document.getElementById('searchInput');
     const produtos = document.querySelectorAll('.produto');
 
-    searchInput.addEventListener('input', function () {
+    searchInput.addEventListener('input', function () { 
       const filtro = searchInput.value.toLowerCase();
 
       produtos.forEach(produto => { 
