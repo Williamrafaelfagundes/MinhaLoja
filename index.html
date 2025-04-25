@@ -114,37 +114,37 @@
 
   <div class="produtos-container" id="produtosContainer">
     <div class="produto">
-      <img src="produto1.jpg" alt="Produto 1">
+      <img src="teste.png" alt="Produto 1">
       <h3>Caneca Criativa</h3>
       <p>Caneca com estampa personalizada.</p>
     </div>
 
     <div class="produto">
-      <img src="produto2.jpg" alt="Produto 2">
+      <img src="teste.png" alt="Produto 2">
       <h3>Quadro Decorativo</h3>
       <p>Quadro para sala ou escritório.</p>
     </div>
 
     <div class="produto">
-      <img src="produto3.jpg" alt="Produto 3">
+      <img src="teste.png" alt="Produto 3">
       <h3>Camiseta Estilosa</h3>
       <p>Conforto e estilo em uma só peça.</p>
     </div>
 
     <div class="produto">
-      <img src="produto4.jpg" alt="Produto 4">
+      <img src="teste.png" alt="Produto 4">
       <h3>Chaveiro de Couro</h3>
       <p>Feito à mão com material de qualidade.</p>
     </div>
 
     <div class="produto">
-      <img src="produto5.jpg" alt="Produto 5">
+      <img src="teste.png" alt="Produto 5">
       <h3>Adesivo para Moto</h3>
       <p>Estilo para sua XRE ou GS650!</p>
     </div>
 
     <div class="produto">
-      <img src="produto6.jpg" alt="Produto 6">
+      <img src="teste.png" alt="Produto 6">
       <h3>Bolsa Compacta</h3>
       <p>Ideal para o dia a dia e viagens.</p>
     </div>
@@ -155,13 +155,13 @@
     const produtos = document.querySelectorAll('.produto');
 
     searchInput.addEventListener('input', function () {
-      const filtro = searchInput.value.toLowerCase(); 
+      const filtro = searchInput.value.toLowerCase();
 
       produtos.forEach(produto => { 
         const nome = produto.querySelector('h3').textContent.toLowerCase();
         if (nome.includes(filtro)) {
           produto.style.display = 'block';
-        } else {
+        } else { 
           produto.style.display = 'none';
         }
       });
